@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:orientation="vertical"
-    android:padding="5dp"
-    android:weightSum="100">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:background="#F2F8EB"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.5"
-            android:background="#A5E4DF"
+            android:background="#FDF6F6"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_postlist_title"
+                android:id="@+id/tv_comment_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center|left"
-                android:text="Title" />
+                android:text="댓쓴이" />
 
             <TextView
-                android:id="@+id/tv_postlist_timestamp"
+                android:id="@+id/tv_comment_timestamp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center|right"
-                android:layout_weight="2"
-                android:background="@color/teal_200"
-                android:gravity="center|right"
-                android:text="2022-01-01-XX:XX:XX"
-                android:textSize="10sp" />
+                android:layout_weight="1"
+                android:text="2022-01-01 XX:XX:XX:XX" />
+
+            <Button
+                android:id="@+id/btn_deletecomment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:maxWidth="50dip"
+                android:minWidth="30dip"
+                android:text="삭제"
+                android:textSize="8sp"
+                android:visibility="invisible"
+                tools:ignore="TouchTargetSizeCheck" />
+
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_postlist_content"
+            android:id="@+id/tv_comment_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center|left"
-            android:text="Content" />
+            android:text="content" />
     </LinearLayout>
-
 </LinearLayout>

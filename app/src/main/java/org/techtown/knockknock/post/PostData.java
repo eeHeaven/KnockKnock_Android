@@ -8,6 +8,9 @@ public class PostData {
 
     //{"data":[{"writerId":"testmember1","title":"테스트입니다","content":"성공인가요?","postedTime":"2022-01-22T23:14:56.314697"}]}
 
+    @SerializedName("id")
+    Long id;
+
     @SerializedName("writerId")
     String writerId;
 
@@ -36,6 +39,8 @@ public class PostData {
         return date;
     }
 
+    public Long getId(){return id;}
+
     public void setWriterId(String writerId) {
         this.writerId = writerId;
     }
@@ -51,4 +56,5 @@ public class PostData {
     public void setDate(String date) {
         this.date = date;
     }
+
 }

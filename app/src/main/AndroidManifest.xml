@@ -13,6 +13,9 @@
         android:theme="@style/Theme.KnockKnock"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".post.PostRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".post.PostdetailActivity"
             android:exported="false" />
         <activity
@@ -29,6 +32,9 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".user.RegisterActivity"
             android:exported="true" />
     </application>
 

@@ -2,8 +2,142 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postdetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F6D5D5"
+    android:backgroundTint="#FDE0E0"
     tools:context=".post.PostdetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/postdetaillayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_postdetail_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="#FAE5E5"
+                android:text="title" />
+
+            <Button
+                android:id="@+id/btn_deletepost"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#F8CFCF"
+                android:backgroundTint="#F4D7D7"
+                android:text="삭제"
+                android:visibility="invisible"
+                android:textColor="#3A3839"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/postdetaillayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#FDD4D4"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/tv_postdetail_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_postdetail_timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2022-01-01 XX:XX:XX:XX" />
+
+            <TextView
+                android:id="@+id/tv_postdetail_writer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="글쓴이" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_postdetail_content"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="2"
+            android:text="content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postdetaillayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_postdetail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F8F0F0"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_postdetail_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_comment"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#FFFCFC"
+            android:backgroundTint="#FDFCFC"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/edit_save_comment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="#D6D1D1"
+                android:foregroundTint="#F1EDED"
+                android:hint="내용을 입력하세요."
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_save_comment"
+                android:layout_width="64dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#CF88A0"
+                android:backgroundTint="@color/white"
+                android:text="전송"
+                android:textColor="#311B92"
+                android:textSize="14sp"
+                app:rippleColor="#CF88A0" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
