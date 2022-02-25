@@ -1,24 +1,23 @@
 package org.techtown.knockknock.post;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.Layout;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.techtown.knockknock.ItemClickListener;
+import org.techtown.knockknock.MainActivity;
 import org.techtown.knockknock.R;
+import org.techtown.knockknock.post.postdetail.PostdetailFragment;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 //Adapter : listview를 만들어서 recyclerview와 연결해줌 , Holder에서 만들어 준 listView를 inflater를 이용해 객체화 시키고 실제 데이터를 담아줌
@@ -32,6 +31,7 @@ public RecyclerAdapter(Context c, List<PostData> postlist){
     this.c = c;
     this.postlist = postlist;
 }
+
 
 @NonNull
 @Override
@@ -57,11 +57,16 @@ public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int p
     holder.itemClickListener = new ItemClickListener() {
         @Override
         public void onItemClickListener(View v, int position) {
-
+            //detail post로 이동하기 위해 post id를 postdetail fragment로 넘기고 실행
             Long postId = postlist.get(position).getId();
-            Intent intent = new Intent(v.getContext(),PostdetailActivity.class);
-            intent.putExtra("postid",postId);
-            v.getContext().startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            Bundle bundle = new Bundle(); // 번들에 post id 담기
+            bundle.putLong("postId",postId);
+
+            //넘어갈 postdetail fragment
+            PostdetailFragment postdetailFragment = new PostdetailFragment();
+            postdetailFragment.setArguments(bundle); // 번들과 같이 넘기기
+            ((MainActivity) c).replaceFragment(postdetailFragment);
+
         }
     };
 }
@@ -94,6 +99,12 @@ public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int p
         public void onClick(View v){
             this.itemClickListener.onItemClickListener(v,getLayoutPosition());
         }
+    }
+
+    //검색할 때 조건 해당하면 해당하는 게시글 목록만 보여주기
+    public void filterList(List<PostData> filteredList){
+    postlist = filteredList;
+    notifyDataSetChanged();
     }
 
 }

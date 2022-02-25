@@ -1,6 +1,8 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.post.postdetail;
 
 import com.google.gson.annotations.SerializedName;
+
+import org.techtown.knockknock.post.CommentData;
 
 import java.util.List;
 
@@ -42,6 +44,9 @@ public class PostDetailData {
     @SerializedName("commentlist")
     List<CommentData> comments;
 
+    @SerializedName("posthashtag")
+    List<String> posthashtag;
+
     public Long getPostid() {
         return postid;
     }
@@ -56,6 +61,14 @@ public class PostDetailData {
 
     public void setPostwriternickname(String postwriternickname) {
         this.postwriternickname = postwriternickname;
+    }
+
+    public List<String> getPosthashtag() {
+        return posthashtag;
+    }
+
+    public void setPosthashtag(List<String> posthashtag) {
+        this.posthashtag = posthashtag;
     }
 
     public String getPostwriterId(){return postwriterId;}

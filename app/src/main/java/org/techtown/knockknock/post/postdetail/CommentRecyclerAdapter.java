@@ -1,6 +1,5 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.post.postdetail;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
@@ -21,6 +19,8 @@ import com.google.gson.Gson;
 import org.techtown.knockknock.ErrorBody;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
+import org.techtown.knockknock.post.CommentData;
+import org.techtown.knockknock.post.PostAPI;
 
 import java.util.List;
 
@@ -32,18 +32,16 @@ public class CommentRecyclerAdapter extends RecyclerView.Adapter<CommentRecycler
 
     private Context c;
     private List<CommentData> commentlist;
+    private PostdetailFragment fragment;
     private static String userId;
 
-    public CommentRecyclerAdapter(Context c, List<CommentData> commentlist){
+    public CommentRecyclerAdapter(Context c, List<CommentData> commentlist,PostdetailFragment fragment){
         this.c = c;
         this.commentlist = commentlist;
+        this.fragment = fragment;
     }
 
-    public void refresh(){
-        Intent intent = new Intent(c,PostdetailActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        c.startActivity(intent);
-    }
+
 
     @NonNull
     @Override
@@ -59,6 +57,7 @@ public class CommentRecyclerAdapter extends RecyclerView.Adapter<CommentRecycler
         holder.writer.setText(commentlist.get(position).getCommentWriterNickname());
         holder.content.setText(commentlist.get(position).getCommentContent());
         holder.timestamp.setText(commentlist.get(position).getCommentedTime());
+        Log.d("CommentAdpater",position+"번째 댓글 "+commentlist.get(position).getCommentContent() +" load 완료");
 
         //로그인 계정과 댓글 작성자가 일치하는지 확인 후 일치하면 삭제 버튼 활성화
         if(commentlist.get(position).getCommentWriterId().equals(userId)){

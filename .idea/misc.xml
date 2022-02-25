@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/bg_custom_button_ask.xml" value="0.1995" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/bg_custom_button_pay.xml" value="0.1" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/bg_custom_hashtag.xml" value="0.2025" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/bg_custom_myinfo_button.xml" value="0.1835" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/edit_coin_size.xml" value="0.1995" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/edit_location_size.xml" value="0.1835" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/edit_myinfo_size.xml" value="0.1835" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/edit_mypost_size.xml" value="0.1995" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/drawable/tv_button_paybox_coin.xml" value="0.1" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_main2.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_post_register.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_postdetail.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_post_register.xml" value="0.264" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_postdetail.xml" value="0.1" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_register.xml" value="0.2390625" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/activity_user_post.xml" value="0.4" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/appbar.xml" value="0.264" />
@@ -15,10 +24,15 @@
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/drawerlayout.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_gallery.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_message.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_mypage.xml" value="0.264" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_post_list_search_by_hash_tag.xml" value="0.4" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_slideshow.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/header.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_comment.xml" value="0.28935185185185186" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_post.xml" value="0.4" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_posthashtag.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/mypage_fragment.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/nav_header_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/navigationbar.xml" value="0.264" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/menu/activity_main_drawer.xml" value="0.25364583333333335" />

@@ -1,55 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="제목" />
-
         <EditText
             android:id="@+id/tv_postRegister_title"
-            android:padding="16dp"
-            android:background="#eeeeee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#FF9F1C"
             android:hint="제목을 입력하세요."
-            />
+            android:lines="1"
+            android:padding="16dp"
+            android:textColorHint="#FF9F1C" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="내용"/>
-
-    <EditText
-        android:id="@+id/tv_postRegister_content"
-        android:padding="16dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="#eeeeee"
-        android:hint="내용을 입력하세요."
-        />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/tv_postRegister_hashtag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFBF69"
+            android:hint="#을 붙여 해시태그를 입력하세요."
+            android:padding="16dp"
+            android:textColorHint="#FFFFFF"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:background="#65E6E6E6"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_postregister"
+            android:layout_width="150dp"
+            android:layout_height="97dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            app:srcCompat="@drawable/ic_img" />
+
+        <EditText
+            android:id="@+id/tv_postRegister_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="내용을 입력하세요."
+            android:padding="16dp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/reg_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#C62828"
         android:text="등록하기"
-        android:textColor="#FFFFFF"
-        android:background="#C62828"/>
+        android:textColor="#FFFFFF" />
 
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package org.techtown.knockknock.post;
 import com.google.gson.annotations.SerializedName;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class PostData {
 
@@ -23,6 +24,9 @@ public class PostData {
     @SerializedName("postedTime")
     String date;
 
+    @SerializedName("hashtag")
+    List<String> hashtag;
+
     public String getWriterId() {
         return writerId;
     }
@@ -40,6 +44,14 @@ public class PostData {
     }
 
     public Long getId(){return id;}
+
+    public List<String> getHashtag() {
+        return hashtag;
+    }
+
+    public void setHashtag(List<String> hashtag) {
+        this.hashtag = hashtag;
+    }
 
     public void setWriterId(String writerId) {
         this.writerId = writerId;

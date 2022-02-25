@@ -8,15 +8,24 @@
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/searchTag"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="15sp"
+        android:hint="#검색"
+        android:lines="1" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="80dp">
 
         <TextView
             android:id="@+id/loginResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="로그인이 필요합니다."
             android:textSize="20sp"
@@ -53,7 +62,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#77CF7B"
+        android:background="#CBF3F0"
         android:orientation="horizontal">
 
         <TextView
@@ -61,11 +70,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#77CF7B"
             android:text="전체 게시글" />
 
         <Button
-            android:id="@+id/btn_main_postRegister"
+            android:id="@+id/btn_hashtagfragment_postRegister"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -75,7 +83,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_totalBoard"
+        android:id="@+id/recyclerView_hashtagBoard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
