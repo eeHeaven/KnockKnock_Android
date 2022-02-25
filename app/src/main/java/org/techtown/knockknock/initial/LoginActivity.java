@@ -1,4 +1,4 @@
-package org.techtown.knockknock.user;
+package org.techtown.knockknock.initial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,7 @@ import org.techtown.knockknock.ErrorBody;
 import org.techtown.knockknock.MainActivity;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
+import org.techtown.knockknock.user.MemberAPI;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,13 +64,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 // memberAPI 연결 활성화하기
                 MemberAPI memberAPI = RetrofitClient.getInstance().create(MemberAPI.class);
-                Call<LoginResponseInfo> loginResponseInfoCall = memberAPI.login(id,pw);
-                loginResponseInfoCall.enqueue(new Callback<LoginResponseInfo>() {
+                Call<MemberBasicInfo> loginResponseInfoCall = memberAPI.login(id,pw);
+                loginResponseInfoCall.enqueue(new Callback<MemberBasicInfo>() {
                     @Override
-                    public void onResponse(Call<LoginResponseInfo> call, Response<LoginResponseInfo> response) {
+                    public void onResponse(Call<MemberBasicInfo> call, Response<MemberBasicInfo> response) {
                         if(response.isSuccessful()){
                         Log.d("HTTP","로그인 성공");
-                            LoginResponseInfo responseInfo = response.body();
+                            MemberBasicInfo responseInfo = response.body();
 
                             //Editor를 preferences에 쓰겠다고 연결
                             SharedPreferences.Editor editor = preferences.edit();
@@ -78,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             String nickname = responseInfo.getNickname();
                             editor.putString("userId", responseInfo.getMemberId());
                             editor.putString("nickname",responseInfo.getNickname());
+                            editor.putInt("point",responseInfo.getPoint());
                             //항상 commit & apply를 해야 저장
                             editor.commit();
                             //Main.Activity로 넘어가기
@@ -93,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                     @Override
-                    public void onFailure(Call<LoginResponseInfo> call, Throwable t) {
+                    public void onFailure(Call<MemberBasicInfo> call, Throwable t) {
                         Log.d("HTTP","로그인 연결 실패 ");
                         Log.e("연결실패", t.getMessage());
                     }

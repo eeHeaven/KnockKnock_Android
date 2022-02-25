@@ -1,14 +1,10 @@
-package org.techtown.knockknock.user;
+package org.techtown.knockknock.initial;
 
-import com.google.gson.annotations.SerializedName;
+public class SignInInfo {
 
-public class LoginResponseInfo {
-
-    @SerializedName("nickname")
     private String nickname;
-
-    @SerializedName("memberId")
     private String memberId;
+    private String memberPassword;
 
     public String getNickname() {
         return nickname;
@@ -18,11 +14,19 @@ public class LoginResponseInfo {
         return memberId;
     }
 
+    public String getMemberPassword() {
+        return memberPassword;
+    }
+
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
     public void setMemberId(String memberId) {
         this.memberId = memberId;
+    }
+
+    public void setMemberPassword(String memberPassword) {
+        this.memberPassword = memberPassword;
     }
 }

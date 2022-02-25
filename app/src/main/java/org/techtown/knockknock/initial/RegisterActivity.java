@@ -1,4 +1,4 @@
-package org.techtown.knockknock.user;
+package org.techtown.knockknock.initial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import org.techtown.knockknock.ErrorBody;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
+import org.techtown.knockknock.user.MemberAPI;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,10 +47,10 @@ public class RegisterActivity extends AppCompatActivity {
                 input.setNickname(nickname.getText().toString());
 
                 MemberAPI signInAPI = RetrofitClient.getInstance().create(MemberAPI.class);
-                Call<LoginResponseInfo> signInResponseInfo =  signInAPI.signMember(input);
-                signInResponseInfo.enqueue(new Callback<LoginResponseInfo>() {
+                Call<MemberBasicInfo> signInResponseInfo =  signInAPI.signMember(input);
+                signInResponseInfo.enqueue(new Callback<MemberBasicInfo>() {
                     @Override
-                    public void onResponse(Call<LoginResponseInfo> call, Response<LoginResponseInfo> response) {
+                    public void onResponse(Call<MemberBasicInfo> call, Response<MemberBasicInfo> response) {
                         if(response.isSuccessful()){
                             Toast.makeText(getApplicationContext(),"회원가입이 완료되었습니다",Toast.LENGTH_LONG).show();
                             Log.d("POST","등록 완료");
@@ -65,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<LoginResponseInfo> call, Throwable t) {
+                    public void onFailure(Call<MemberBasicInfo> call, Throwable t) {
                         Toast.makeText(getApplicationContext(),"연결 실패했습니다",Toast.LENGTH_LONG).show();
                         Log.d("POST","Fail msg : " + t.getMessage());
                     }

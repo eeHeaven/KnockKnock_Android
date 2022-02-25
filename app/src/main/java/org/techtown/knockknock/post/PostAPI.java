@@ -1,5 +1,8 @@
 package org.techtown.knockknock.post;
 
+import org.techtown.knockknock.post.postdetail.CommentSaveRequest;
+import org.techtown.knockknock.post.postdetail.PostDetailData;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -29,4 +32,7 @@ public interface PostAPI {
 
     @DELETE("api/comment/{commentid}/delete")
     Call<Void> deleteComment(@Path("commentid")Long commentId);
+
+    @GET("api/{hashtag}/posts")
+    Call<PostListData> getPostDatabyHashTag(@Path("hashtag")String hashtag);
 }

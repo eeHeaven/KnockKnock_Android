@@ -13,16 +13,15 @@
         android:theme="@style/Theme.KnockKnock"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false" />
+        <activity
             android:name=".post.PostRegisterActivity"
             android:exported="false" />
+
         <activity
-            android:name=".post.PostdetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".post.UserPostActivity"
-            android:exported="false" />
-        <activity
-            android:name=".user.LoginActivity"
+            android:name=".initial.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,10 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".user.RegisterActivity"
+            android:name=".initial.RegisterActivity"
             android:exported="true" />
     </application>
 
