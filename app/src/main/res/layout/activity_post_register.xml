@@ -42,36 +42,47 @@
             tools:ignore="TextContrastCheck" />
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="15sp"
-        android:layout_marginBottom="15sp"
-        android:background="#65E6E6E6"
-        android:orientation="vertical">
+        android:layout_height="350dp"
+        android:layout_marginTop="10sp"
+        android:background="#65E6E6E6">
 
-        <ImageView
-            android:id="@+id/img_postregister"
-            android:layout_width="150dp"
-            android:layout_height="97dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15sp"
-            app:srcCompat="@drawable/ic_img" />
-
-        <EditText
-            android:id="@+id/tv_postRegister_content"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:hint="내용을 입력하세요."
-            android:padding="16dp" />
-    </LinearLayout>
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_postregister"
+                android:layout_width="150dp"
+                android:layout_height="97dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15sp"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_img" />
+
+            <EditText
+                android:id="@+id/tv_postRegister_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="내용을 입력하세요."
+                android:padding="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
     <Button
         android:id="@+id/reg_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:background="#C62828"
         android:text="등록하기"
         android:textColor="#FFFFFF" />

@@ -1,26 +1,13 @@
 package org.techtown.knockknock.post.postdetail;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 
 import org.techtown.knockknock.post.CommentData;
 
 import java.util.List;
 
-//{
-//        "id": 2,
-//        "writer": "테스트멤버1",
-//        "title": "테스트입니다",
-//        "content": "성공인가요?",
-//        "postedTime": "2022-01-22T23:14:56.314697",
-//        "commentlist": [
-//        {
-//        "commentId": 1001,
-//        "writerNickname": "테스트멤버1",
-//        "timestamp": "2022-01-24T12:19:54.123447",
-//        "content": "테스트 댓글입니다."
-//        }
-//        ]
-//        }
 public class PostDetailData {
 
     @SerializedName("id")
@@ -46,6 +33,18 @@ public class PostDetailData {
 
     @SerializedName("posthashtag")
     List<String> posthashtag;
+
+    @Nullable
+    @SerializedName("image")
+    String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public Long getPostid() {
         return postid;

@@ -83,6 +83,15 @@
             </LinearLayout>
 
 
+            <ImageView
+                android:id="@+id/postdetail_img"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_img"
+                android:visibility="gone" />
+
             <TextView
                 android:id="@+id/tv_postdetail_content"
                 android:layout_width="match_parent"

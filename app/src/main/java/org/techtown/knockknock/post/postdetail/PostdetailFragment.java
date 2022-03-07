@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,9 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
 import org.techtown.knockknock.ErrorBody;
@@ -52,6 +55,7 @@ public class PostdetailFragment extends Fragment {
     TextView title;
     TextView writer;
     TextView timestamp;
+    ImageView image;
     TextView content;
     List<CommentData> comments;
     List<String> posthashtags;
@@ -126,11 +130,19 @@ public class PostdetailFragment extends Fragment {
                     writer = mView.findViewById(R.id.tv_postdetail_writer);
                     timestamp = mView.findViewById(R.id.tv_postdetail_timestamp);
                     content = mView.findViewById(R.id.tv_postdetail_content);
+                    image = mView.findViewById(R.id.postdetail_img);
 
                     title.setText(postdata.getPostTitle());
                     content.setText(postdata.getPostContent());
                     writer.setText(postdata.getPostwriternickname());
                     timestamp.setText(postdata.getPostedTime());
+
+                    if(postdata.getImage()!= null) {
+                        Uri uri = Uri.parse(postdata.getImage());
+                        Glide.with(getActivity()).load(uri).into(image);
+                        image.setVisibility(View.VISIBLE);}
+                    else image.setVisibility(View.GONE);
+
                     comments = postdata.comments;
                     posthashtags = postdata.posthashtag;
 
