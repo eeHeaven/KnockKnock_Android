@@ -8,20 +8,9 @@
 
 ## 🌳Function
 **************************
-* UI 는 아직 개발 진행 중인 관계로 확정 단계가 아님   
-1. ![image](https://user-images.githubusercontent.com/84822464/155740713-eb55f24d-e0b7-4d3f-b301-07c67202f09d.png)   
-로그인을 하면 다음과 같이 유저의 위치 인근에서 올린 정보성 게시글들을 실시간으로 확인할 수 있습니다.   
-2. ![image](https://user-images.githubusercontent.com/84822464/155741096-20221488-4c81-4a71-9fdb-f2e054cf146e.png)   
-각 게시글을 전체화면에서 터치시 게시글 상세 페이지로 넘어갑니다. 댓글을 남겨 추가적인 정보를 공유할 수 있습니다. 
-3. ![image](https://user-images.githubusercontent.com/84822464/155741682-7a9a6ccd-f78b-4624-a404-729e9233a750.png)  
-해시태그 기반 검색을 통해 검색한 내용의 해시태그를 달고 있는 게시글들이 검색 내용 변경에 따라 실시간으로 조회됩니다.   
-4. ![image](https://user-images.githubusercontent.com/84822464/155741515-24b38679-f8fa-4c0c-9213-d93b8231d195.png)   
-게시글 상세 페이지에서의 각 해시태그를 터치하면 해당 해시태그를 달고 있는 게시글들이 조회됩니다.   
-5. ![image](https://user-images.githubusercontent.com/84822464/155741831-64efba7c-170e-4265-838e-bc7130071a64.png)    
-게시글을 작성할 때, 내 게시글이 좋아요를 받을 때마다 유저의 공유포인트는 올라가게 됩니다. 해당 포인트는 결제를 통해 구매할 수도 있습니다.     
-포인트는 실시간으로 도움이나 급한 정보가 필요한 순간에 똑똑 메세지를 전송할 때마다 사용하게 됩니다. 똑똑 메세지를 받아 응답을 해준 유저에게 소진된 포인트가 전달됩니다.         
-6. 유저는 자신의 똑똑 MODE를 설정할 수 있습니다. 똑똑 MODE를 켜면 자신의 인근의 유저가 보낸 똑똑메세지에 대한 실시간 알림을 받고 그에 대한 답을 줄 수 있습니다.           
-
+![image](https://user-images.githubusercontent.com/84822464/161085605-38f271ea-2b89-498c-b159-1a564caf5988.png)       
+![image](https://user-images.githubusercontent.com/84822464/161085790-d4e4538f-f4b7-4174-9ea0-d4463421e826.png)
+![image](https://user-images.githubusercontent.com/84822464/161085918-6e95a92a-5abe-4ea1-aab5-0d49a033de5f.png)
 
 ## 🌳Function
 ***************************
