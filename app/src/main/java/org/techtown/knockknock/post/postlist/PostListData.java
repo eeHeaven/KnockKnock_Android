@@ -1,6 +1,8 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.post.postlist;
 
 import com.google.gson.annotations.SerializedName;
+
+import org.techtown.knockknock.post.postlist.PostData;
 
 import java.util.List;
 

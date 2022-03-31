@@ -2,14 +2,12 @@ package org.techtown.knockknock.post.postdetail;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,9 +30,11 @@ import org.techtown.knockknock.MainActivity;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
 import org.techtown.knockknock.initial.MemberBasicInfo;
-import org.techtown.knockknock.post.CommentData;
+import org.techtown.knockknock.post.postdetail.comment.CommentData;
 import org.techtown.knockknock.post.PostAPI;
-import org.techtown.knockknock.post.UserPostFragment;
+import org.techtown.knockknock.post.postdetail.comment.CommentRecyclerAdapter;
+import org.techtown.knockknock.post.postdetail.comment.CommentSaveRequest;
+import org.techtown.knockknock.post.postdetail.hashtag.HashTagRecyclerAdapter;
 import org.techtown.knockknock.user.MemberAPI;
 
 import java.util.ArrayList;
@@ -57,6 +57,7 @@ public class PostdetailFragment extends Fragment {
     TextView timestamp;
     ImageView image;
     TextView content;
+    TextView postlocation;
     List<CommentData> comments;
     List<String> posthashtags;
     Button delete_bt;
@@ -85,10 +86,10 @@ public class PostdetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.activity_postdetail,null);
+        //백버튼 보이기
+        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = container.getContext();
         fragment = this;
-
-
         comments = new ArrayList<>();
         posthashtags = new ArrayList<>();
 
@@ -102,7 +103,6 @@ public class PostdetailFragment extends Fragment {
         hashtagrecyclerView = mView.findViewById(R.id.recyclerView_postdetail_hashtag);
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false); // 가로 정렬
         hashtagrecyclerView.setLayoutManager(layoutManager1);
-
 
 
 
@@ -131,11 +131,13 @@ public class PostdetailFragment extends Fragment {
                     timestamp = mView.findViewById(R.id.tv_postdetail_timestamp);
                     content = mView.findViewById(R.id.tv_postdetail_content);
                     image = mView.findViewById(R.id.postdetail_img);
+                    postlocation = mView.findViewById(R.id.tv_postdetail_location);
 
                     title.setText(postdata.getPostTitle());
                     content.setText(postdata.getPostContent());
                     writer.setText(postdata.getPostwriternickname());
                     timestamp.setText(postdata.getPostedTime());
+                    postlocation.setText(postdata.getLocation());
 
                     if(postdata.getImage()!= null) {
                         Uri uri = Uri.parse(postdata.getImage());
@@ -184,7 +186,7 @@ public class PostdetailFragment extends Fragment {
                                             });
 
                                             Toast.makeText(context,"게시글이 삭제되었습니다",Toast.LENGTH_LONG).show();
-                                            ((MainActivity)getActivity()).replaceFragment(HomeFragment.newInstance());
+                                            ((MainActivity)getActivity()).replaceFragment(new HomeFragment());
                                         }
                                         else{
                                             Toast.makeText(context,"게시글 삭제에 실패했습니다",Toast.LENGTH_LONG).show();
@@ -232,6 +234,7 @@ public class PostdetailFragment extends Fragment {
                                         recyclerAdapter.notifyItemInserted(comments.indexOf(savedComment));
                                         commentrecyclerView.invalidate();
                                         Toast.makeText(context,"댓글 작성이 완료되었습니다.",Toast.LENGTH_LONG).show();
+                                        commentRegister.setText(null);
                                     }
                                         else{
                                             Toast.makeText(context,"댓글 작성이 실패했습니다.",Toast.LENGTH_LONG).show();

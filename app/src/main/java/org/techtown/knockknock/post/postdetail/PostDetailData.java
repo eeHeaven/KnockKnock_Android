@@ -4,7 +4,7 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.techtown.knockknock.post.CommentData;
+import org.techtown.knockknock.post.postdetail.comment.CommentData;
 
 import java.util.List;
 
@@ -33,6 +33,9 @@ public class PostDetailData {
 
     @SerializedName("posthashtag")
     List<String> posthashtag;
+
+    @SerializedName("location")
+    String location;
 
     @Nullable
     @SerializedName("image")
@@ -93,6 +96,10 @@ public class PostDetailData {
 
     public String getPostedTime() {
         return postedTime;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public void setPostedTime(String postedTime) {

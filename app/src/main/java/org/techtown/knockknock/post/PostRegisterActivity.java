@@ -19,6 +19,8 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -45,9 +47,11 @@ import org.techtown.knockknock.user.MemberAPI;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -74,6 +78,12 @@ public class PostRegisterActivity extends AppCompatActivity {
     EditText content;
     Button writePost;
     ImageView img;
+
+
+    //위치
+    private Float lat;
+    private Float lon;
+    Geocoder geocoder;
 
 
     SharedPreferences preferences;
@@ -127,12 +137,17 @@ public class PostRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_register);
 
+        geocoder = new Geocoder(this);
+
         title = findViewById(R.id.tv_postRegister_title);
         hashtag = findViewById(R.id.tv_postRegister_hashtag);
         content = findViewById(R.id.tv_postRegister_content);
         writePost = findViewById(R.id.reg_button);
         img = findViewById(R.id.img_postregister);
 
+        SharedPreferences locationPreferences = this.getSharedPreferences("Location",MODE_PRIVATE);
+        lat = locationPreferences.getFloat("latitude",0);
+        lon = locationPreferences.getFloat("longitude",0);
 
 
         // 이미지 업로드 처리
@@ -178,7 +193,21 @@ public class PostRegisterActivity extends AppCompatActivity {
                 String posthashtag = hashtag.getText().toString();
                 String postcontent = content.getText().toString();
 
-                PostSaveRequest request = new PostSaveRequest(posttitle,posthashtag,postcontent);
+                //주소값 가져오기
+                String location = "해당되는 주소 정보 없음";
+                List<Address> list = null;
+                try{
+                    list = geocoder.getFromLocation(lat,lon,10);
+                }catch(IOException e){
+                    e.printStackTrace();
+                    Log.e("MypageFragment","Geocoder 입출력 오류");
+                }
+                if(list != null){
+                    if(list.size() == 0) location = "현위치에 해당되는 주소 정보가 없습니다.";
+                    else location = list.get(0).getAddressLine(0);
+                }
+
+                PostSaveRequest request = new PostSaveRequest(posttitle,posthashtag,postcontent,lat,lon,location);
 
                 SharedPreferences sharedPreferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
                 String id = sharedPreferences.getString("userId","");

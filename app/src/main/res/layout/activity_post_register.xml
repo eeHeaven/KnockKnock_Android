@@ -17,11 +17,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#FF9F1C"
+            android:backgroundTint="#00C897"
             android:hint="제목을 입력하세요."
             android:lines="1"
             android:padding="16dp"
-            android:textColorHint="#FF9F1C" />
+            android:textColorHint="#00C897" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FFBF69"
+            android:background="#00C897"
             android:hint="#을 붙여 해시태그를 입력하세요."
             android:padding="16dp"
             android:textColorHint="#FFFFFF"
@@ -83,9 +83,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
-        android:background="#C62828"
+        android:background="#00C897"
+        android:backgroundTint="#00C897"
         android:text="등록하기"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

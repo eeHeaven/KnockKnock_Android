@@ -5,99 +5,141 @@
     android:id="@+id/postdetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6D5D5"
-    android:backgroundTint="#FDE0E0"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     android:orientation="vertical"
     app:layoutDescription="@xml/activity_postdetail_scene"
     tools:context=".post.postdetail.PostdetailFragment">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp">
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_postdetail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="45sp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:paddingLeft="10sp"
+            android:paddingTop="5sp"
+            android:text="title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/postdetail_img"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/btn_deletepost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:background="#00C897"
+            android:backgroundTint="#00C897"
+            android:text="삭제"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/postdetaillayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tv_postdetail_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_postdetail_title">
+
+        <TextView
+            android:id="@+id/tv_postdetail_timestamp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:paddingLeft="10sp"
+            android:text="2022-01-01 XX:XX:XX:XX" />
+
+        <TextView
+            android:id="@+id/tv_postdetail_writer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:paddingLeft="13sp"
+            android:paddingTop="5sp"
+            android:text="글쓴이" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_postdetail_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10sp"
+        android:text="위치위치위치위치"
+        android:textColor="#00C897"
+        app:layout_constraintBottom_toTopOf="@+id/ly_postdetail_hashtag"
+        app:layout_constraintStart_toStartOf="@+id/postdetaillayout"
+        app:layout_constraintTop_toBottomOf="@+id/postdetaillayout" />
+
+    <LinearLayout
+        android:id="@+id/ly_postdetail_hashtag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:paddingTop="5sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_postdetail_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_postdetail_location"
+        app:layout_constraintTop_toBottomOf="@+id/tv_postdetail_location">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_postdetail_hashtag"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_postdetail_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:background="#FAE5E5"
-                    android:text="title" />
-
-                <Button
-                    android:id="@+id/btn_deletepost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="#F8CFCF"
-                    android:backgroundTint="#F4D7D7"
-                    android:text="삭제"
-                    android:textColor="#3A3839"
-                    android:visibility="invisible"
-                    tools:ignore="TextContrastCheck" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/postdetaillayout"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#FDD4D4"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_postdetail_timestamp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="2022-01-01 XX:XX:XX:XX" />
-
-                <TextView
-                    android:id="@+id/tv_postdetail_writer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="글쓴이" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ly_postdetail_hashtag"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#FDFCFC"
-                android:orientation="horizontal">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView_postdetail_hashtag"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
 
             <ImageView
                 android:id="@+id/postdetail_img"
-                android:layout_width="350dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:foregroundGravity="center"
                 android:src="@drawable/ic_img"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_postdetail_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:background="#F3CACA"
+                android:background="#FFFFFF"
+                android:paddingLeft="10sp"
                 android:paddingTop="25sp"
                 android:paddingBottom="25sp"
                 android:text="content"
@@ -109,10 +151,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_postdetail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#F8F0F0"
                 android:overScrollMode="never"
+                android:paddingLeft="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout_comment"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,16 +163,17 @@
 
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
-
     </ScrollView>
 
 
     <RelativeLayout
         android:id="@+id/relativeLayout_comment"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:background="#FFFCFC"
-        android:backgroundTint="#FDFCFC">
+        android:backgroundTint="#FDFCFC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_postdetail">
 
         <EditText
             android:id="@+id/edit_save_comment"
@@ -157,15 +201,15 @@
             android:layout_height="50dp"
             android:layout_alignParentLeft="false"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#CF88A0"
-            android:backgroundTint="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="25dp"
+            android:background="#00C897"
             android:text="전송"
-            android:textColor="#311B92"
+            android:textColor="#FFFFFF"
             android:textSize="14sp"
-            app:rippleColor="#CF88A0" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
 
     </RelativeLayout>
 
