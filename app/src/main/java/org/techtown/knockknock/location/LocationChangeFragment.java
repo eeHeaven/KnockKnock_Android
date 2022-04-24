@@ -49,6 +49,7 @@ import org.techtown.knockknock.MainActivity;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
 import org.techtown.knockknock.firebase.FirebaseUser;
+import org.techtown.knockknock.message.MessageSendFragment;
 import org.techtown.knockknock.post.PostAPI;
 import org.techtown.knockknock.post.postlist.PostListData;
 import org.techtown.knockknock.post.postlist.RecyclerAdapter;
@@ -126,14 +127,23 @@ public class LocationChangeFragment extends Fragment implements OnMapReadyCallba
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                char destination = getArguments().getChar("from");
                 Bundle bundle = new Bundle();
                 bundle.putDouble("latitude",targetlat);
                 bundle.putDouble("longitude",targetlon);
                 Log.d("LocationChangeFragment","Target Location: "+targetlat+" , "+targetlon);
 
+                if(destination == 'h'){ //homefragment로 입력값 리턴
                 HomeFragment home= new HomeFragment();
                 home.setArguments(bundle);
                 ((MainActivity)getActivity()).replaceFragment(home);
+                }
+
+                else{ //messagesendfragment로 입력값 리턴
+                    MessageSendFragment messageSendFragment = new MessageSendFragment();
+                    messageSendFragment.setArguments(bundle);
+                    ((MainActivity)getActivity()).replaceFragment(messageSendFragment);
+                }
             }
         });
 

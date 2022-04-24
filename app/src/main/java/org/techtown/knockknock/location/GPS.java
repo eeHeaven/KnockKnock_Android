@@ -15,15 +15,24 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.firebase.geofire.GeoFireUtils;
+import com.firebase.geofire.GeoLocation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.techtown.knockknock.firebase.FirebaseUser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class GPS extends Service implements LocationListener {
-    private DatabaseReference mDatabase;// 실시간 위치정보 업데이트용 DB
+    private FirebaseFirestore db =  FirebaseFirestore.getInstance(); // 실시간 위치정보 업데이트용 DB
 
     private final Context mContext;
     private String userid;
@@ -47,7 +56,7 @@ public class GPS extends Service implements LocationListener {
     public GPS(Context mContext, String id){
         this.mContext = mContext;
         this.userid = id;
-        mDatabase  = FirebaseDatabase.getInstance().getReference();
+        db = FirebaseFirestore.getInstance();
         getLocation();
 
     }
@@ -91,22 +100,33 @@ public class GPS extends Service implements LocationListener {
         return location;
     }
 
-    private void updateUserLocation(double latitude, double longitude) {
-        UserLocation data = new UserLocation(userid,latitude,longitude,count);
 
-        mDatabase.child("userlocation").child(userid).setValue(data)
+    private void updateUserLocation(double latitude, double longitude) {
+        String hash = GeoFireUtils.getGeoHashForLocation(new GeoLocation(latitude,longitude));
+
+        Map<String,Object> updates = new HashMap<>();
+        updates.put("geohash",hash);
+        updates.put("lat",latitude);
+        updates.put("lng",longitude);
+        updates.put("count",count);
+
+        DocumentReference locationRef = db.collection("userlocation").document(userid);
+                locationRef.update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Log.d("Firebase","User Location update success, userId : "+userid);
+                    }
+                });
+         db.collection("userlocation").document(userid).set(updates)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(Void aVoid) {
-                        // Write was successful!
-                        Log.d("Firebase","UserLoctaion update success");
+                    public void onSuccess(Void unused) {
+                        Log.d("Firebase","업데이트 성공, userId : "+userid);
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
+                }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        // Write failed
-                        Log.d("Firebase","UserLoctaion update failed");
+                        Log.w("Firebase","업데이트 실패",e);
                     }
                 });
 

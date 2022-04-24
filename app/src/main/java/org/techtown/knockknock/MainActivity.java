@@ -36,6 +36,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.techtown.knockknock.fragment.AutoCompleteSearchFragment;
 import org.techtown.knockknock.location.GPS;
 import org.techtown.knockknock.message.MessageFragment;
 import org.techtown.knockknock.user.MypageFragment;
@@ -66,7 +67,10 @@ public class MainActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbarmenu_search:
-                //검색창으로 이동
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.home_ly,new AutoCompleteSearchFragment())
+                        .commit();
+                return true;
             case android.R.id.home:{
                 onBackPressed();
             }
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu,menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

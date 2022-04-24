@@ -1,5 +1,7 @@
 package org.techtown.knockknock.post;
 
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+
 import org.techtown.knockknock.post.postdetail.comment.CommentSaveRequest;
 import org.techtown.knockknock.post.postdetail.PostDetailData;
 import org.techtown.knockknock.post.postdetail.comment.CommentData;
@@ -15,6 +17,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface PostAPI {
 
@@ -43,6 +46,6 @@ public interface PostAPI {
     @DELETE("api/comment/{commentid}/delete")
     Call<Void> deleteComment(@Path("commentid")Long commentId);
 
-    @GET("api/{hashtag}/posts")
-    Call<PostListData> getPostDatabyHashTag(@Path("hashtag")String hashtag);
+    @GET("api/post/view/hashtag")
+    Call<PostListData> getPostDatabyHashTag(@Query("hashtag")String hashtag);
 }

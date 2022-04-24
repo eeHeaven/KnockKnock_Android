@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "57269861776",
+    "project_id": "knockknock-338ce",
+    "storage_bucket": "knockknock-338ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57269861776:android:0b997986047a2870644715",
+        "android_client_info": {
+          "package_name": "org.techtown.knockknock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57269861776-fsjjlk44a21hh8trlhrl8jthkn58tg3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.techtown.knockknock",
+            "certificate_hash": "03736bcb73e5a77f61435ab7f46f0c6ac33d1682"
+          }
+        },
+        {
+          "client_id": "57269861776-35jcr6l28g8lqch8icq3vm6odni83860.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCKnpQ5K4iCBI49SsdpmoF2NTW1Nk-Vc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57269861776-35jcr6l28g8lqch8icq3vm6odni83860.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

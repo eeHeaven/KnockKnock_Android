@@ -72,7 +72,7 @@ public class PostListSearchByHashTagFragment extends Fragment {
 
         //글 목록 가져오기
         PostAPI postAPI = RetrofitClient.getInstance().create(PostAPI.class);
-        String tagforapi = tag.substring(1);
+        String tagforapi = tag;
         Call<PostListData> call = postAPI.getPostDatabyHashTag(tagforapi);
         call.enqueue(new Callback<PostListData>() {
             @Override

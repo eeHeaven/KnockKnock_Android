@@ -1,5 +1,7 @@
 package org.techtown.knockknock.location;
 
+import com.firebase.geofire.GeoFireUtils;
+import com.firebase.geofire.GeoLocation;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
@@ -8,9 +10,9 @@ public class UserLocation {
     private String id;
     private double latitude;
     private double longitude;
-    private int count;
+    private String geohash;
 
-    public UserLocation(){}
+    protected UserLocation(){}
 
     public Double getLatitude() {
         return latitude;
@@ -28,18 +30,10 @@ public class UserLocation {
         this.longitude = longitude;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public UserLocation(String id, Double latitude, Double longitude, int count) {
+    public UserLocation(String id, Double latitude, Double longitude) {
         this.id = id;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.count = count;
+        this.geohash = GeoFireUtils.getGeoHashForLocation(new GeoLocation(latitude, longitude));
     }
 }

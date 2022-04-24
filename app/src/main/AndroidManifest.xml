@@ -23,11 +23,17 @@
         android:theme="@style/Theme.KnockKnock"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".STOMP.TestActivity"
-            android:exported="false" />
+            android:name=".TestActivity"
+            android:exported="false" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity
             android:name=".googlemap.GoogleMapActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <uses-library android:name="com.google.android.maps" />
         <uses-library
@@ -36,14 +42,14 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyD_DiNSiajDAX6iD-duGAmot0VDG95nFoc" />
+            android:value="AIzaSyDd2gDHYmO5ZP6DS7BwBsoR9Ee6iIQ-JUk" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <activity
             android:name=".firebase.FirebaseTestActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".initial.StartActivity"
             android:exported="true">

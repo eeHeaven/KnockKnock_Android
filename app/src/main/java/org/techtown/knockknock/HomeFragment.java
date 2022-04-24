@@ -131,7 +131,13 @@ public class HomeFragment extends Fragment {
         btn_locationchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) getActivity()).replaceFragment(LocationChangeFragment.newInstance());
+                Bundle bundle = new Bundle();
+                //home fragment로부터의 요청임을 보냄
+                bundle.putChar("from",'h');
+
+                LocationChangeFragment fragment = new LocationChangeFragment();
+                fragment.setArguments(bundle);
+                ((MainActivity)getActivity()).replaceFragment(fragment);
             }
         });
 
