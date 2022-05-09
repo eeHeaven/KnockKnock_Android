@@ -1,7 +1,6 @@
-package org.techtown.knockknock.post.postdetail;
+package org.techtown.knockknock.post.postdetail.comment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,7 +18,7 @@ import com.google.gson.Gson;
 import org.techtown.knockknock.ErrorBody;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
-import org.techtown.knockknock.post.CommentData;
+import org.techtown.knockknock.post.postdetail.PostdetailFragment;
 import org.techtown.knockknock.post.PostAPI;
 
 import java.util.List;

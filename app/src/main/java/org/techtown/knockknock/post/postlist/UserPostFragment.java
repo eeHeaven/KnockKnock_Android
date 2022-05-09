@@ -1,31 +1,27 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.post.postlist;
 
 import static android.content.Context.MODE_PRIVATE;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import org.techtown.knockknock.ErrorBody;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
+import org.techtown.knockknock.post.PostAPI;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,6 @@
-package org.techtown.knockknock.post.postdetail;
+package org.techtown.knockknock.post.postdetail.hashtag;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,13 +9,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.techtown.knockknock.ItemClickListener;
 import org.techtown.knockknock.MainActivity;
 import org.techtown.knockknock.R;
+import org.techtown.knockknock.post.postlist.PostListSearchByHashTagFragment;
+import org.techtown.knockknock.post.postdetail.PostdetailFragment;
 
 import java.util.List;
 

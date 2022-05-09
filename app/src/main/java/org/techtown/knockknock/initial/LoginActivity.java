@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btn_login.setOnClickListener(this);
         btn_register2.setOnClickListener(this);
 
-        et_id2 = (EditText) findViewById(R.id.et_id2);
+        et_id2 = (EditText) findViewById(R.id.firebase_id);
         et_pass2 = (EditText) findViewById(R.id.et_pass2);
 
         //getSharedPreferences("파일이름",'모드');
@@ -49,9 +49,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // 모드 => Mode_Private 이 앱에서만 사용 가능
         preferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
 
-
     }
-
 
     @Override
     public void onClick(View view) {

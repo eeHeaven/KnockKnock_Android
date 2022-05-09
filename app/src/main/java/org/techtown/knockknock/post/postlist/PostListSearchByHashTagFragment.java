@@ -1,4 +1,4 @@
-package org.techtown.knockknock.post.postdetail;
+package org.techtown.knockknock.post.postlist;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,14 +19,10 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import org.techtown.knockknock.ErrorBody;
-import org.techtown.knockknock.HomeFragment;
 import org.techtown.knockknock.R;
 import org.techtown.knockknock.RetrofitClient;
 import org.techtown.knockknock.post.PostAPI;
-import org.techtown.knockknock.post.PostData;
-import org.techtown.knockknock.post.PostListData;
 import org.techtown.knockknock.post.PostRegisterActivity;
-import org.techtown.knockknock.post.RecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +63,7 @@ public class PostListSearchByHashTagFragment extends Fragment {
 
         postamount = (TextView) mView.findViewById(R.id.tv_hashtagfragment_number);
         hashtag = (TextView) mView.findViewById(R.id.tv_hashtagfragment_hashtag);
-        writePost = (Button) mView.findViewById(R.id.btn_hashtagfragment_postRegister);
+        writePost = (Button) mView.findViewById(R.id.btn_homefragment_postRegister);
 
         if(getArguments()!=null){
             tag = getArguments().getString("hashtag");
@@ -76,7 +72,7 @@ public class PostListSearchByHashTagFragment extends Fragment {
 
         //글 목록 가져오기
         PostAPI postAPI = RetrofitClient.getInstance().create(PostAPI.class);
-        String tagforapi = tag.substring(1);
+        String tagforapi = tag;
         Call<PostListData> call = postAPI.getPostDatabyHashTag(tagforapi);
         call.enqueue(new Callback<PostListData>() {
             @Override

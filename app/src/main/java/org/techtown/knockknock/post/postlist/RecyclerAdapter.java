@@ -1,8 +1,6 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.post.postlist;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.techtown.knockknock.ItemClickListener;
@@ -89,9 +86,9 @@ public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int p
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title = (TextView)itemView.findViewById(R.id.tv_postlist_title);
-            content = (TextView)itemView.findViewById(R.id.tv_postlist_content);
-            date = (TextView)itemView.findViewById(R.id.tv_postlist_timestamp);
+            title = (TextView)itemView.findViewById(R.id.tv_chatroomlist_partner);
+            content = (TextView)itemView.findViewById(R.id.tv_chatroomlist_message);
+            date = (TextView)itemView.findViewById(R.id.tv_chatroomlist_timestamp);
 
             itemView.setOnClickListener(this);
         }

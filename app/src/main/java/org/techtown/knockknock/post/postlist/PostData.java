@@ -1,4 +1,4 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.post.postlist;
 
 import com.google.gson.annotations.SerializedName;
 

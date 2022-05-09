@@ -1,19 +1,21 @@
-package org.techtown.knockknock.post;
+package org.techtown.knockknock.message;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.techtown.knockknock.post.postlist.PostData;
+
 import java.util.List;
 
-public class PostListData {
+public class ChatRoomListData {
 
     @SerializedName("data")
-    public List<PostData> data;
+    public List<ChatRoomData> data;
 
-    public List<PostData> getData() {
+    public List<ChatRoomData> getData() {
         return data;
     }
 
-    public void setData(List<PostData> data) {
+    public void setData(List<ChatRoomData> data) {
         this.data = data;
     }
 

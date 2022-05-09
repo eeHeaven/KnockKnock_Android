@@ -1,4 +1,4 @@
-package org.techtown.knockknock.post.postdetail;
+package org.techtown.knockknock.post.postdetail.comment;
 
 public class CommentSaveRequest {
 

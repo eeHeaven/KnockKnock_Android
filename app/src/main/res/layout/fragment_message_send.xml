@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#FDFFA9"
+        android:orientation="vertical"
+        tools:layout_conversion_absoluteHeight="80dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="56dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_message" />
+
+            <TextView
+                android:id="@+id/userchatroommessage_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/geninum_book_basic"
+                android:gravity="center"
+                android:text="위치 기반 쪽지 전송"
+                android:textColor="#787272"
+                android:textColorHint="#787171"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/messagesend_tv_mylocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:text="내위치내위치내위치내위치"
+                android:textColor="#00C897"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toBottomOf="@+id/userchatroommessage_partner" />
+
+            <TextView
+                android:id="@+id/messagesend_tv_messageinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:text="실시간 내 위치 1km 이내 유저들에게 메세지 전송하기"
+                android:textColor="#787272"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toBottomOf="@+id/messagesend_tv_mylocation" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFD365"
+        android:orientation="horizontal"
+        tools:layout_conversion_absoluteHeight="50dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp">
+
+        <TextView
+            android:id="@+id/userchatroomdetail_partnerId"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="쪽지 보내기"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_messagesend_locationchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00C897"
+            android:text="위치 설정"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:strokeColor="#009688" />
+
+        <ImageView
+            android:id="@+id/btn_messagesend_send"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_send" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#65E6E6E6"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tv_messagesend_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+            android:hint="내용을 입력하세요."
+            android:padding="16dp"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
