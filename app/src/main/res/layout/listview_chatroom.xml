@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 android:gravity="center|left"
                 android:paddingTop="5sp"
-                android:text="Title"
+                android:text="대화상대1"
                 android:textColor="#323535"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -58,7 +58,7 @@
             android:paddingTop="5sp"
             android:paddingEnd="5sp"
             android:paddingBottom="10sp"
-            android:text="Content"
+            android:text="메세지입니다."
             android:textColor="#323535" />
 
     </LinearLayout>

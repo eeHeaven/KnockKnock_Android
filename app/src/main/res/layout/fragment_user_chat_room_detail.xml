@@ -5,14 +5,14 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#E1E1E1"
     android:orientation="vertical"
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="#019267 "
         android:orientation="horizontal"
         tools:layout_conversion_absoluteHeight="50dp"
@@ -22,30 +22,24 @@
 
         <TextView
             android:id="@+id/userchatroomdetail_partnerId"
-            android:layout_width="270dp"
-            android:layout_height="match_parent"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
             android:paddingStart="10sp"
-            android:paddingTop="5sp"
-            android:text="내 쪽지함"
-            android:textAlignment="gravity"
+            android:text="testmember 님과의 쪽지"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btn_sendfirstmessage"
+        <ImageView
+            android:id="@+id/btn_message_send"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="3sp"
-            android:layout_marginRight="3sp"
-            android:layout_marginBottom="3sp"
+            android:layout_marginTop="3dp"
             android:layout_weight="1"
-            android:background="#FFD365"
-            android:text="메세지 보내기" />
+            android:src="@drawable/ic_send_yellow" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_chatRoomlist"
+        android:id="@+id/userchatroomdetail_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

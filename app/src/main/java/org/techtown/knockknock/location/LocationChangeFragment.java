@@ -217,7 +217,6 @@ public class LocationChangeFragment extends Fragment implements OnMapReadyCallba
 
         map = googleMap;
         if (ActivityCompat.checkSelfPermission(this.getActivity().getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: 권한 승인 요청하기
             return;
         }
         map.setMyLocationEnabled(true);

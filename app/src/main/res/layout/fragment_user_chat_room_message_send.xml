@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#FDFFA9"
-        android:orientation="vertical"
         tools:layout_conversion_absoluteHeight="80dp"
         tools:layout_conversion_absoluteWidth="411dp"
         tools:layout_editor_absoluteX="0dp"
@@ -39,80 +38,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
                 android:fontFamily="@font/geninum_book_basic"
                 android:gravity="center"
-                android:text="위치 기반 쪽지 전송"
+                android:text="테스트멤버1님께 메세지 전송"
                 android:textColor="#787272"
                 android:textColorHint="#787171"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/messagesend_tv_mylocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="2dp"
-                android:text="내위치내위치내위치내위치"
-                android:textColor="#00C897"
-                android:textSize="11sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toBottomOf="@+id/userchatroommessage_partner" />
-
-            <TextView
-                android:id="@+id/messagesend_tv_messageinfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="2dp"
-                android:text="실시간 내 위치 1km 이내 유저들에게 메세지 전송하기"
-                android:textColor="#787272"
-                android:textSize="11sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toBottomOf="@+id/messagesend_tv_mylocation" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFD365"
-        android:orientation="horizontal"
-        tools:layout_conversion_absoluteHeight="50dp"
-        tools:layout_conversion_absoluteWidth="411dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="80dp">
-
-        <TextView
-            android:id="@+id/userchatroomdetail_partnerId"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:paddingStart="10sp"
-            android:text="쪽지 보내기"
-            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_messagesend_locationchange"
+            android:id="@+id/userchatroommessage_sendbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00C897"
-            android:text="위치 설정"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:strokeColor="#009688" />
-
-        <ImageView
-            android:id="@+id/btn_messagesend_send"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_send" />
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="30sp"
+            android:layout_marginRight="10sp"
+            android:background="#00C897"
+            android:foregroundGravity="right"
+            android:text="전송" />
 
     </LinearLayout>
 
@@ -123,7 +71,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/tv_messagesend_content"
+            android:id="@+id/userchatroommessage_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

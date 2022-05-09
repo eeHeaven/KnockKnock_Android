@@ -153,7 +153,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#F8F0F0"
                 android:overScrollMode="never"
                 android:paddingLeft="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout_comment"

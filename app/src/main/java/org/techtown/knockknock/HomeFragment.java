@@ -13,8 +13,6 @@ import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,7 +85,7 @@ public class HomeFragment extends Fragment {
         TextView loginInfo = (TextView) mView.findViewById(R.id.loginResult);
         listinfo = mView.findViewById(R.id.home_tv_listinfo);
         btn_write = (Button) mView.findViewById(R.id.btn_homefragment_postRegister);
-        totalboard = mView.findViewById(R.id.tv_totalBoard);
+        totalboard = mView.findViewById(R.id.userchatroomdetail_partnerId);
 
         filteredList = new ArrayList<>();
 

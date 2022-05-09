@@ -38,8 +38,12 @@
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_post_list_search_by_hash_tag.xml" value="0.22920517560073936" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_slideshow.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_temp_fregmant.xml" value="0.16909722222222223" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_user_chat_room_detail.xml" value="0.264" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/fragment_user_chat_room_message_send.xml" value="0.2" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/header.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_chatroom.xml" value="0.159375" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_comment.xml" value="0.28935185185185186" />
+        <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_message.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_post.xml" value="0.4" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/listview_posthashtag.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/OCS/AndroidStudioProjects/KnockKnock2/app/src/main/res/layout/mypage_fragment.xml" value="0.23802083333333332" />

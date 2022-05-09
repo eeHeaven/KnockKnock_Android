@@ -86,9 +86,9 @@ public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int p
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title = (TextView)itemView.findViewById(R.id.tv_postlist_title);
-            content = (TextView)itemView.findViewById(R.id.tv_postlist_content);
-            date = (TextView)itemView.findViewById(R.id.tv_postlist_timestamp);
+            title = (TextView)itemView.findViewById(R.id.tv_chatroomlist_partner);
+            content = (TextView)itemView.findViewById(R.id.tv_chatroomlist_message);
+            date = (TextView)itemView.findViewById(R.id.tv_chatroomlist_timestamp);
 
             itemView.setOnClickListener(this);
         }
