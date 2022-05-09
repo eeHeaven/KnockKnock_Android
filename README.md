@@ -22,7 +22,7 @@ language : Java 8
 * Java 8
 * Google Map API
 * Glider (Image Uploader)
-* STOMP (WebSocket) 
+
 
 
 
